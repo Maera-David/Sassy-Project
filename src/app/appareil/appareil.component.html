@@ -1,9 +1,11 @@
 <li [ngClass]="{'list-group-item': true, 'list-group-item-success': appareilStatus === 'Vu', 'list-group-item-danger': appareilStatus === 'A voir'}">
-    <h4 [ngStyle]="{color: getColor()}">Titre : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+    <h4 [ngStyle]="{color: getColor()}">Title : {{ appareilName }} -- Status : {{ getStatus() }}</h4>
+
+    <a [routerLink]="[id]">Détails</a>
 
     <input type="text" class="form-control" [(ngModel)]="appareilName">
 
-    <button class="btn btn-sm btn-success" *ngIf="appareilStatus === 'A voir'" (click)="onSwitch()">Vu</button>
+    <button class="btn btn-sm btn-success" *ngIf="appareilStatus === 'A voir'" (click)="onSwitch()">Seen</button>
 
-    <button class="btn btn-sm btn-danger" *ngIf="appareilStatus === 'Vu'" (click)="onSwitch()">A voir</button>
+    <button class="btn btn-sm btn-danger" *ngIf="appareilStatus === 'Vu'" (click)="onSwitch()">To see</button>
 </li>
