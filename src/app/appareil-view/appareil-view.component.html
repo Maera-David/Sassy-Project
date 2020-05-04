@@ -4,7 +4,12 @@
     <ul class="list-group">
         <app-appareil *ngFor="let appareil of appareils; let i = index" [appareilName]="appareil.name" [appareilStatus]="appareil.status" [index]="i" [id]="appareil.id"></app-appareil>
     </ul>
-    <button class="btn btn-success" [disabled]="!isAuth" (click)="onAllumer()">Seen everything</button>
+    <button class="btn btn-success" (click)="onAllumer()">Seen everything</button>
 
-    <button class="btn btn-danger" [disabled]="!isAuth" (click)="onEteindre()">Everything to see</button>
+    <button class="btn btn-danger" (click)="onEteindre()">Everything to see</button>
+
+    <button class="btn btn-primary" (click)="onSave()">Register movies</button>
+
+    <button class="btn btn-primary" (click)="onFetch()">Get movies</button>
+    
 </div>
